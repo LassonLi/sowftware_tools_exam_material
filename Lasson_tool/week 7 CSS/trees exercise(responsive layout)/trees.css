@@ -1,0 +1,97 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    margin: 0;
+}
+
+header {
+    background-color: #04443c;
+    color: white;
+    margin: 0;
+    padding: 10px;
+    padding-left: 50px;
+}
+
+.card {
+    background-color: #167f5f;
+    color: white;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.card span.latin-name {
+    display: block;
+    font-style: italic;
+    padding: 10px;
+    padding-bottom: 0;
+}
+
+.card span.common-name {
+    display: block;
+    padding: 10px;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+
+
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card.featured {
+    grid-column: span 2;
+}
+
+.card-image {
+    width: 100%;
+    display: block;
+}
+
+.latin-name,
+.common-name {
+    display: block;
+    text-align: center;
+}
+
+/* Responsive styles for screens 400px to 600px wide */
+@media (min-width: 400px) and (max-width: 599px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+
+    .card.featured {
+        display: none;
+    }
+}
+
+/* Responsive styles for screens 600px wide or wider */
+@media (min-width: 600px) {
+    .container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 20px;
+    }
+    
+    .card.featured {
+        grid-column: block;
+        grid-column: span 2;
+    }
+}

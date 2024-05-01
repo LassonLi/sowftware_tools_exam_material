@@ -1,0 +1,58 @@
+body {
+    font-family: sans-serif;
+    background-color: rgba(112, 145, 53, 0.1);
+}
+
+.unit {
+    background-color: rgba(0, 67, 79, 0.2);
+}
+
+.unit b {
+    display: block;
+    background-color: rgb(0, 67, 79);
+    color: white;
+    padding: 5px;
+}
+
+.unit p {
+    padding: 5px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 15px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+/* Define the widths of the units based on their credit points */
+.unit.cp10 {
+    grid-column: span 2; /* 10 CP units take up 2 columns */
+}
+
+.unit.cp15 {
+    grid-column: span 3; /* 15 CP units take up 3 columns */
+}
+
+.unit.cp20 {
+    grid-column: span 4; /* 20 CP units take up 4 columns */
+}
+
+.unit.cp40 {
+    grid-column: span 8; /* 40 CP units take up 8 columns */
+}
+
+/* Special handling for the SPE unit */
+.unit.y2-tb4 {
+    grid-column: 11 / 13; /* SPE takes up 8 columns */
+    grid-row: 3 / span 2; /* and 2 rows in height */
+}
+
+/* Increase the gap between years */
+.unit.y1-tb2:last-child, .unit.y2-tb4, .unit.y3-tb2:last-child {
+    margin-bottom: 30px; /* Assuming this is the last unit of the year */
+}
+
+/* If necessary, you can define the start position of units that are not positioned correctly by the default flow */
+/* Example: .unit.someClass { grid-column-start: X; } where X is the line number to start at */

@@ -1,0 +1,17 @@
+4.26 openssl
+
+Generate the Private Key：
+openssl genrsa -out private_key.pem 1024
+
+Extract the Public Key：
+openssl rsa -in private_key.pem -pubout -out public_key.pem
+
+
+
+openssl rsautl -encrypt -inkey public.pem -pubin -in mytext.txt -out encrypted_mytext.bin
+
+
+openssl rsautl -decrypt -inkey private_key.pem -in encrypted_message.bin -out decrypted_message.txt
+
+
+openssl verify -CAfile root_cert.pem -verify_hostname host cert.crt
