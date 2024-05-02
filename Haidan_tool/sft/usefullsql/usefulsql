@@ -1,0 +1,12 @@
+SELECT Party.name as Party, Ward.name as ward from Candidate inner join Party on Party.id=Candidate.party  inner join Ward on Ward.id =Candidate.ward where Ward.name= 'Bedminster';
+select Ward.name as Ward, votes from Candidate inner join Ward on Ward.id=Candidate.ward;
+select Ward.name as Ward,sum( votes) from Candidate inner join Ward on Ward.id=Candidate.ward where Ward.name='Stockwood';
+ select Candidate.name, Party.name as Party, votes from Candidate inner join Ward on Ward.id=Candidate.ward inner join Party on Party.id=Candidate.party  where Ward.name='Southville' order by votes Desc;
+select Candidate.name, Party.name as Party, votes from Candidate inner join Ward on Ward.id=Candidate.ward inner join Party on Party.id=Candidate.party  where
+Ward.name='Knowle' order by votes Desc limit 2;
+select Country.code as ctcode, Region.code as rgcode, County.code As cccode, Ward.code as wcode from County inner join Ward on Ward.parent = County.code inner join Region on Region.code=County.parent inner join Country on Country.code=Region.parent  where Ward.name="Cabot" ;
+Select data as numbers from Statistic where Statistic.occId = 1 and gender =1 and wardId='E05001979';
+Select Occupation.name as name, Statistic.data as numbers from Statistic inner join Occupation on Statistic.occId = Occupation.id  where gender =0 and wardId='E05002003';
+select name from Ward  group by name having count(name)>1 ;
+Select vt/sum(vt) over() from  (SELECT votes as vt  from Candidate inner join Ward on Candidate.ward= Ward.id where Ward.name="Windmill Hill") as a ;
+ Select name, vt/sum(vt) over() as pre from  (SELECT Candidate.name as name, votes as vt  from Candidate inner join Party on Candidate.party= Party.id where Party.name="Conservative") as a order by pre desc;

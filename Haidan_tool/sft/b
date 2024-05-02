@@ -1,0 +1,39 @@
+#!/bin/bash
+cc="gcc"
+comp(){
+if [ "$1x" == "x" ];then
+exit 1
+elif  [[ $1 =~ .c$ ]]; then
+$cc -Wall -std=c11 -g "$1" -o "${1/.c/}"
+else
+$cc -Wall -std=c11 -g "$1.c" -o "$1"
+fi
+}
+
+run(){
+if [ "$1x" == "x" ];then
+exit 1
+else
+"./${1/.c/}"
+fi
+}
+
+build(){
+comp $1
+if [ $? != 1 ]; then
+run $1
+fi
+}
+
+if [ "$1x" == "x" ]; then #is null
+exit 1
+elif [ "$1" == "compile" ]; then
+comp $2
+elif [ "$1" == "run" ]; then
+run $2
+elif [ "$1" == "build" ]; then
+build $2
+fi
+
+
+
