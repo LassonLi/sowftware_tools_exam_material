@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type "image/x-icon" href="/img/favicon.ico" />
+    <title>My Cool Movie Searcher</title>
+    <div style="padding: 0 0 5px 5px; float: left; height: 25px;">
+        <img src="/img/logo_TMDB.svg"
+             alt="Logo" style="width: auto;
+           height:100%;
+           object-fit: cover;">
+    </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=2.0" />
+    <link rel="stylesheet" href="/css/style.css"/>
+</head>
+<body>
+<h3>Let us learn how to use a JavaScript API!</h3>
+<header>
+    <form id="form">
+        <input type="text" id="search" class="search" placeholder="search movies">
+    </form>
+</header>
+
+<main id="main"></main>
+
+<script src="/js/script.js"></script>
+
+<footer class="footer"
+   <p> &nbsp;  &nbsp;This website uses the TMDB APIs but is not endorsed, certified, or otherwise approved by TMDB. </p>
+    <div th:text="|${pagination.currentPageNumber}/${pagination.documentPagesSize}|" class="footer-text">
+    </div>
+</footer>
+
+</body>
+</html>
